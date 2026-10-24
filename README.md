@@ -12,6 +12,12 @@ python server.py
 
 Open **http://127.0.0.1:8000**, then select **Load demo inbox**. To use a different port: `python server.py --port 8001`.
 
+## Deploy on Vercel
+
+The hosted Flask build is configured in `vercel.json`. Follow
+[VERCEL_DEPLOY.md](VERCEL_DEPLOY.md) to configure PostgreSQL, deployment
+secrets, and optional Gmail OAuth before deploying.
+
 ## Optional: connect your Gmail
 
 The dashboard now includes **Connect Gmail**, a 30/90/180-day scan window, job-email filtering, and a batch assessment summary. Matching messages enter the existing tracker with scam reasons and follow-up reminders. Access is read-only; tokens remain in server memory.

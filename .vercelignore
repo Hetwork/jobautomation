@@ -1,0 +1,17 @@
+.git
+.venv
+.venv-vercel
+__pycache__
+**/__pycache__
+*.pyc
+.env
+.env.*
+!.env.example
+client_secret*.json
+credentials.json
+token.json
+config/*credentials*.json
+data/*.sqlite3*
+fake_job_postings.csv
+artifacts
+tests

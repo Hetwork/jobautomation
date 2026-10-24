@@ -187,7 +187,7 @@ class GmailConnection:
             state, binding, verifier = (secrets.token_urlsafe(32) for _ in range(3))
             challenge = base64.urlsafe_b64encode(hashlib.sha256(verifier.encode()).digest()).decode().rstrip('=')
             self.pending = {'state': state, 'binding': binding, 'verifier': verifier,
-                            'redirect_uri': redirect_uri, 'created': time.monotonic()}
+                            'redirect_uri': redirect_uri, 'created': time.time()}
             params = {'client_id': client['client_id'], 'redirect_uri': redirect_uri, 'response_type': 'code',
                       'scope': SCOPE, 'state': state, 'code_challenge': challenge, 'code_challenge_method': 'S256',
                       'access_type': 'offline', 'prompt': 'consent select_account'}
@@ -196,7 +196,7 @@ class GmailConnection:
     def complete(self, state, binding, code, denied=False):
         with self.lock:
             pending = self.pending
-            if (not pending or time.monotonic() - pending['created'] > 600
+            if (not pending or time.time() - pending['created'] > 600
                     or not secrets.compare_digest(state.encode(), pending['state'].encode())
                     or not secrets.compare_digest(binding.encode(), pending['binding'].encode())):
                 raise GmailError('Gmail connection expired or could not be verified. Start again from Connect Gmail.')
@@ -232,18 +232,19 @@ class GmailConnection:
             self.tokens['expires_at'] = time.time() + int(updated.get('expires_in', 3600))
         return self.tokens['access_token']
 
-    def sync(self, store, days=90):
+    def sync(self, store, days=90, batch_size=100, max_seconds=None):
         if type(days) is not int or days not in (30, 90, 180):
             raise GmailError('Choose a 30, 90 or 180 day scan window.')
         if not self.lock.acquire(blocking=False):
             raise GmailError('Another Gmail operation is running. Please wait.')
         self.syncing = True
+        started = time.monotonic()
         try:
             token = self._access_token()
             query = (f'newer_than:{days}d -in:sent -in:drafts '
                      '{application interview "job offer" "offer letter" "employment offer" '
                      'recruiter recruiting hiring candidate onboarding "training fee" "technical round"}')
-            params = {'q': query, 'maxResults': 100}
+            params = {'q': query, 'maxResults': batch_size}
             cursor = self.cursor if days == self.window else None
             if cursor:
                 params['pageToken'] = cursor
@@ -251,6 +252,8 @@ class GmailConnection:
             emails, ignored, unreadable = [], 0, 0
             candidates = listing.get('messages', [])
             for item in candidates:
+                if max_seconds and time.monotonic() - started > max_seconds:
+                    raise GmailError('Google is responding slowly. This batch was not imported. Retry the scan.')
                 message = google_request(API_URL + 'messages/' + item['id'] + '?format=full', token=self._access_token())
                 if any(label in message.get('labelIds', []) for label in ('SENT', 'DRAFT', 'SPAM', 'TRASH')):
                     ignored += 1

@@ -8,3 +8,8 @@ credentials.json
 client_secret*.json
 token.json
 .env
+.env.*
+!.env.example
+.venv-vercel/
+.vercel/
+public/

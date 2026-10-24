@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "python scripts/build_vercel.py --assets-only",
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 120,
+      "excludeFiles": "{tests/**,config/**,client_secret*.json,credentials.json,token.json,*.csv,data/*.sqlite3*,artifacts/**,.venv*/**}"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index" },
+    { "source": "/", "destination": "/api/index" }
+  ]
+}
