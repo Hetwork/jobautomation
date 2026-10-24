@@ -1,0 +1,204 @@
+{
+  "emails": [
+    {
+      "application_id": "northstar",
+      "company": "Northstar",
+      "role": "Product Designer",
+      "from": "Northstar <careers@northstar.example>",
+      "date": "2026-10-08T08:00:00+00:00",
+      "subject": "Application received",
+      "body": "Thank you for applying for Product Designer. We have received your application.",
+      "message_id": "<demo-0@autopilot.example>"
+    },
+    {
+      "application_id": "northstar",
+      "company": "Northstar",
+      "role": "Product Designer",
+      "from": "Northstar <careers@northstar.example>",
+      "date": "2026-10-22T08:00:00+00:00",
+      "subject": "Meet the design team",
+      "body": "We loved your portfolio. Please choose a time for your interview with our design lead.",
+      "message_id": "<demo-1@autopilot.example>"
+    },
+    {
+      "application_id": "orbit",
+      "company": "Orbit Labs",
+      "role": "Frontend Engineer",
+      "from": "Orbit Labs <careers@orbit.example>",
+      "date": "2026-10-11T08:00:00+00:00",
+      "subject": "Application received",
+      "body": "Thank you for applying. Our team will review your application shortly.",
+      "message_id": "<demo-2@autopilot.example>"
+    },
+    {
+      "application_id": "orbit",
+      "company": "Orbit Labs",
+      "role": "Frontend Engineer",
+      "from": "Orbit Labs <careers@orbit.example>",
+      "date": "2026-10-23T08:00:00+00:00",
+      "subject": "Your employment offer",
+      "body": "We are pleased to offer you the Frontend Engineer position. The offer letter is attached for review. We never ask applicants to pay training fees.",
+      "message_id": "<demo-3@autopilot.example>"
+    },
+    {
+      "application_id": "canopy",
+      "company": "Canopy",
+      "role": "UX Researcher",
+      "from": "Canopy <careers@canopy.example>",
+      "date": "2026-10-10T08:00:00+00:00",
+      "subject": "Application received",
+      "body": "We have received your application for UX Researcher.",
+      "message_id": "<demo-4@autopilot.example>"
+    },
+    {
+      "application_id": "canopy",
+      "company": "Canopy",
+      "role": "UX Researcher",
+      "from": "Canopy <careers@canopy.example>",
+      "date": "2026-10-20T08:00:00+00:00",
+      "subject": "An update on your application",
+      "body": "Unfortunately, we have decided to move forward with other candidates. Thank you for your time.",
+      "message_id": "<demo-5@autopilot.example>"
+    },
+    {
+      "application_id": "linear",
+      "company": "Linear Works",
+      "role": "Product Designer",
+      "from": "Linear Works <careers@linear.example>",
+      "date": "2026-10-06T08:00:00+00:00",
+      "subject": "Application received",
+      "body": "Thanks for applying for Product Designer. Your application is with our hiring team.",
+      "message_id": "<demo-6@autopilot.example>"
+    },
+    {
+      "application_id": "linear",
+      "company": "Linear Works",
+      "role": "Product Designer",
+      "from": "Linear Works <careers@linear.example>",
+      "date": "2026-10-15T08:00:00+00:00",
+      "subject": "Next step: interview",
+      "body": "We would like to invite you to an interview. Please reply with your availability.",
+      "message_id": "<demo-7@autopilot.example>"
+    },
+    {
+      "application_id": "figment",
+      "company": "Figment",
+      "role": "Design Engineer",
+      "from": "Figment <careers@figment.example>",
+      "date": "2026-10-13T08:00:00+00:00",
+      "subject": "Thanks for applying",
+      "body": "Your application is in. Our team will be in touch after reviewing your experience.",
+      "message_id": "<demo-8@autopilot.example>"
+    },
+    {
+      "application_id": "bloom",
+      "company": "Bloom Health",
+      "role": "Frontend Engineer",
+      "from": "Bloom Health <careers@bloom.example>",
+      "date": "2026-10-16T08:00:00+00:00",
+      "subject": "Application confirmation",
+      "body": "Thank you for applying. We have received your application and will be in touch.",
+      "message_id": "<demo-9@autopilot.example>"
+    },
+    {
+      "application_id": "loom",
+      "company": "Loom Studio",
+      "role": "Product Designer",
+      "from": "Loom Studio <careers@loom.example>",
+      "date": "2026-10-21T08:00:00+00:00",
+      "subject": "Application received",
+      "body": "Your application has been received. Thank you for your interest in our team.",
+      "message_id": "<demo-10@autopilot.example>"
+    },
+    {
+      "application_id": "atlas",
+      "company": "Atlas",
+      "role": "UX Engineer",
+      "from": "Atlas <careers@atlas.example>",
+      "date": "2026-10-23T08:00:00+00:00",
+      "subject": "Let us meet",
+      "body": "We would like to schedule a screening call to discuss your experience. Are you free on Tuesday?",
+      "message_id": "<demo-11@autopilot.example>"
+    },
+    {
+      "application_id": "remote",
+      "company": "RemoteHub Careers",
+      "role": "Remote Data Analyst",
+      "from": "RemoteHub Careers <careers@remote.example>",
+      "date": "2026-10-22T08:00:00+00:00",
+      "subject": "Immediate job offer \u2014 action required",
+      "body": "Congratulations! No interview required. Pay a refundable training fee of INR 4,500 today to secure your role. This offer expires in two hours.",
+      "message_id": "<demo-12@autopilot.example>"
+    },
+    {
+      "application_id": "vertex",
+      "company": "Vertex Recruiting",
+      "role": "Operations Associate",
+      "from": "Vertex Recruiting <careers@vertex.example>",
+      "date": "2026-10-23T08:00:00+00:00",
+      "subject": "Your offer is ready",
+      "body": "We are pleased to offer you a position. Reply with your passport and bank account details by email to activate your employee profile.",
+      "message_id": "<demo-13@autopilot.example>"
+    },
+    {
+      "application_id": "apex",
+      "company": "Apex Talent",
+      "role": "Virtual Assistant",
+      "from": "Apex Talent <careers@apex.example>",
+      "date": "2026-10-19T08:00:00+00:00",
+      "subject": "Welcome to the team",
+      "body": "Your job offer is approved. Deposit the check we send you and transfer the remaining money to our equipment supplier.",
+      "message_id": "<demo-14@autopilot.example>"
+    },
+    {
+      "application_id": "notion",
+      "company": "Notion Grove",
+      "role": "Product Analyst",
+      "from": "Notion Grove <careers@notion.example>",
+      "date": "2026-10-18T08:00:00+00:00",
+      "subject": "Thank you for your interest",
+      "body": "Unfortunately, you were not selected for this role. We appreciate the time you invested.",
+      "message_id": "<demo-15@autopilot.example>"
+    },
+    {
+      "application_id": "pulse",
+      "company": "Pulse",
+      "role": "UI Engineer",
+      "from": "Pulse <careers@pulse.example>",
+      "date": "2026-10-14T08:00:00+00:00",
+      "subject": "We have your application",
+      "body": "Your application has been received. We look forward to learning more about you.",
+      "message_id": "<demo-16@autopilot.example>"
+    },
+    {
+      "application_id": "terra",
+      "company": "Terra",
+      "role": "UX Designer",
+      "from": "Terra <careers@terra.example>",
+      "date": "2026-10-24T08:00:00+00:00",
+      "subject": "Application received",
+      "body": "Thank you for applying. Your application is now under review.",
+      "message_id": "<demo-17@autopilot.example>"
+    },
+    {
+      "application_id": "ripple",
+      "company": "Ripple Systems",
+      "role": "React Developer",
+      "from": "Ripple Systems <careers@ripple.example>",
+      "date": "2026-10-17T08:00:00+00:00",
+      "subject": "Application confirmation",
+      "body": "We have received your application. The hiring team will review it shortly.",
+      "message_id": "<demo-18@autopilot.example>"
+    },
+    {
+      "application_id": "mosaic",
+      "company": "Mosaic",
+      "role": "Senior Product Designer",
+      "from": "Mosaic <careers@mosaic.example>",
+      "date": "2026-10-24T08:00:00+00:00",
+      "subject": "Technical round invitation",
+      "body": "We would like to invite you to a technical round with our product team. Please select a time for your interview.",
+      "message_id": "<demo-19@autopilot.example>"
+    }
+  ]
+}

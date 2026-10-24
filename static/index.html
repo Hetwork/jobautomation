@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Hunt Autopilot — Your next chapter, organized</title>
+  <meta name="description" content="A local job application tracker with explainable scam flags and follow-up reminders.">
+  <link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Autopilot home"><span class="brand-symbol">a<span>↗</span></span>autopilot<span class="brand-dot">.</span></a>
+    <div class="workspace"><span class="avatar">Y</span><div>Your next chapter<small>Personal workspace</small></div><span class="workspace-dot"></span></div>
+    <p class="nav-label">WORKSPACE</p>
+    <nav aria-label="Workspace">
+      <button class="nav-item active" data-view="all"><span class="nav-icon">▦</span> Applications <span class="nav-count" id="nav-all">0</span></button>
+      <button class="nav-item" data-view="followups"><span class="nav-icon">◷</span> Follow-ups <span class="nav-count" id="nav-followups">0</span></button>
+      <button class="nav-item" data-view="scams"><span class="nav-icon">◇</span> Flagged offers <span class="nav-count danger-count" id="nav-scams">0</span></button>
+      <button class="nav-item" data-view="inbox"><span class="nav-icon">▤</span> Imported inbox <span class="nav-count" id="nav-inbox">0</span></button>
+    </nav>
+    <div class="sidebar-note"><span class="note-mark">↗</span><h3>A fresh start.<br>A clearer path.</h3><p>A layoff changes your plans.<br>It doesn’t define your next chapter.</p></div>
+    <div class="local-status"><span></span> Local & private <small>Optional read-only Gmail sync</small></div>
+  </aside>
+
+  <main>
+    <header class="topbar"><div>Workspace <span>/</span> <strong id="breadcrumb">Applications</strong></div><div class="sync"><span></span><span id="sync-status">Connecting…</span></div></header>
+    <div class="page">
+      <div class="page-heading"><div><p class="eyebrow">LESS CHAOS. MORE MOMENTUM.</p><h1 id="page-title">Your next chapter, organized.</h1><p id="page-subtitle">Every application in sight. Every next step within reach.</p></div><button class="primary" id="upload-button"><span>＋</span> Import inbox</button></div>
+      <input type="file" id="file-input" accept=".json,.mbox" hidden>
+      <section class="gmail-strip" aria-label="Gmail connection">
+        <div class="gmail-description"><strong>Bring your real job search into focus.</strong><p id="gmail-status">Connect Gmail to find job-related messages and assess suspicious offers.</p></div>
+        <div class="gmail-actions"><label id="gmail-window-label" hidden>Scan window <select id="gmail-days"><option value="30">Last 30 days</option><option value="90" selected>Last 90 days</option><option value="180">Last 180 days</option></select></label><button id="gmail-connect" class="secondary">Connect Gmail</button><button id="gmail-scan" class="primary" hidden>Scan job emails</button><button id="gmail-disconnect" class="text-button" hidden>Disconnect</button><button id="gmail-setup" class="text-button">Setup & privacy</button></div>
+        <div id="gmail-assessment" class="gmail-assessment" role="status" hidden></div>
+      </section>
+      <section class="demo-strip" aria-label="Demo inbox"><div><span class="demo-icon">▤</span><div><strong>Meet your job hunt, on autopilot.</strong><p>Try 20 sample emails: applications, interviews, offers, and a few red flags.</p></div></div><button id="demo-button" class="text-button">Load demo inbox <span>↗</span></button></section>
+      <section class="stats" aria-label="Application summary">
+        <button class="stat" data-filter="all"><span>Total applications <span>↗</span></span><strong id="stat-total">0</strong><small id="stat-emails">From 0 imported emails</small></button>
+        <button class="stat" data-filter="interview"><span>In conversation <span class="green">↗</span></span><strong id="stat-interviews">0</strong><small>Interview & assessment stage</small></button>
+        <button class="stat" data-filter="offer"><span>Offers received <span class="green">✓</span></span><strong id="stat-offers">0</strong><small>Your hard work, paying off</small></button>
+        <button class="stat" data-view="followups"><span>Time to follow up <span class="amber">◷</span></span><strong id="stat-followups">0</strong><small>7+ days without an update</small></button>
+      </section>
+      <section id="risk-banner" class="risk-banner" hidden><div class="risk-mark">!</div><div><strong id="risk-title"></strong><p>These messages contain suspicious requests. Review the reasons before responding.</p></div><button class="risk-link" data-view="scams">Review flags <span>→</span></button></section>
+
+      <section class="tracker" aria-labelledby="tracker-title">
+        <div class="tracker-heading"><div><h2 id="tracker-title">Application tracker <span id="tracker-count">0</span></h2><p id="tracker-subtitle">A little clarity for your next big move.</p></div><a class="secondary" href="/api/export" download>↓ <span>Export CSV</span></a></div>
+        <div class="tracker-tools"><div class="tabs" role="group" aria-label="Filter by stage"><button class="tab selected" data-filter="all">All applications</button><button class="tab" data-filter="applied">Applied</button><button class="tab" data-filter="interview">Interview</button><button class="tab" data-filter="offer">Offer</button><button class="tab" data-filter="rejected">Rejected</button></div><label class="search"><span>⌕</span><input type="search" id="search" placeholder="Search company or role…" aria-label="Search company, role or email"></label></div>
+        <div id="table-area" class="table-scroll"></div>
+        <div class="table-footer"><span id="table-caption">Your applications will appear here</span><span>Updated from your imported inbox <span class="green">●</span></span></div>
+      </section>
+      <section class="bottom-note"><div><span>◇</span><p><strong>A second pair of eyes, built in.</strong> Every imported email is checked for suspicious requests alongside its application stage.</p></div><button id="how-button" class="text-button">How it works ↗</button></section>
+      <footer><span>JOB HUNT AUTOPILOT</span><span>Built for the next chapter.</span><a href="/api/sample" download>Download sample JSON ↓</a></footer>
+    </div>
+  </main>
+  <dialog id="details" aria-labelledby="detail-title"><div id="detail-content"></div></dialog>
+  <dialog id="gmail-dialog" aria-labelledby="gmail-title"><div class="modal-head"><div><p class="eyebrow">CONNECT YOUR INBOX</p><h2 id="gmail-title">Gmail, with read-only access.</h2></div><button class="close-button" data-close="gmail-dialog" aria-label="Close Gmail setup">×</button></div><div class="modal-body"><p class="fine-print">Google grants permission to read your mailbox. Autopilot searches for job-related messages and stores matching emails locally for assessment. It cannot send, edit, or delete your Gmail messages.</p><ol class="how-steps"><li><strong>Create a Google Cloud project</strong><p>Enable the Gmail API in <a href="https://console.cloud.google.com/apis/library/gmail.googleapis.com" target="_blank" rel="noopener noreferrer">Google Cloud Console ↗</a>.</p></li><li><strong>Configure Google Auth Platform</strong><p>Set up Branding and an External audience in Testing mode. Add your Gmail address as a test user. Add the gmail.readonly scope under Data Access.</p></li><li><strong>Create or use an OAuth client</strong><p>Use a Desktop app or Web application client. For a Web client, save this exact Authorized redirect URI in Google Cloud: http://127.0.0.1:8000/ (including the trailing slash). Download its JSON and save it in this project as <code>config/gmail_credentials.json</code>. Keep this file private. Full instructions are in <code>GMAIL_SETUP.md</code>.</p></li><li><strong>Connect, then scan</strong><p>Click Connect Gmail, grant read access on Google, then Scan job emails. Each scan checks up to 100 matching messages. Continue with the next batch when available.</p></li></ol><div class="model-box"><strong>Your connection stays under your control.</strong><p>Tokens stay in server memory. Restarting the server requires reconnecting. Disconnect attempts to revoke access and clears the local connection; already imported emails remain in your tracker.</p><p>This is one local workspace for one person. Gmail threads group messages; separate threads for the same job may appear as separate applications. Search and keyword filtering can miss messages, and an assessment is not a guarantee of legitimacy.</p></div></div></dialog>
+  <dialog id="how-dialog" aria-labelledby="how-title"><div class="modal-head"><div><p class="eyebrow">UNDER THE HOOD</p><h2 id="how-title">One inbox. One clear picture.</h2></div><button class="close-button" data-close="how-dialog" aria-label="Close explanation">×</button></div><div class="modal-body"><ol class="how-steps"><li><strong>Bring your inbox</strong><p>Import a JSON or .mbox file, up to 10 MB and 1,000 emails. Everything stays on this computer.</p></li><li><strong>One label for every message</strong><p>Each new email becomes applied, interview, rejected, offer, or scam. Re-importing the same message skips classification.</p></li><li><strong>Know what needs your attention</strong><p>Scam flags include the specific suspicious text. Active applications surface after seven quiet days. Logging a follow-up means you sent it elsewhere; this app never sends email.</p></li></ol><div class="model-box" id="model-info"></div><p class="fine-print">This prototype uses keyword rules, which can miss scams and misread context. A flag is a reason to review, not a verified fraud finding. An unflagged message is not a guarantee of safety.</p></div></dialog>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

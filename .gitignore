@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+data/*.sqlite3*
+.venv/
+artifacts/
+config/*credentials*.json
+credentials.json
+client_secret*.json
+token.json
+.env
